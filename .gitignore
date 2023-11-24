@@ -17,6 +17,13 @@ node_modules
 .settings/
 *.sublime-workspace
 
+# dotenv environment variables file
+.env
+.env.test
+
+# Next.js build output
+.next
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
