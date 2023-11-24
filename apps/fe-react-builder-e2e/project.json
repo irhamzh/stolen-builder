@@ -1,0 +1,33 @@
+{
+  "name": "fe-react-builder-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/fe-react-builder-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/fe-react-builder-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "fe-react-builder:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "fe-react-builder:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "fe-react-builder:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/fe-react-builder-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["fe-react-builder"],
+  "tags": []
+}
