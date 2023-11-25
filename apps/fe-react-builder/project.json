@@ -19,7 +19,7 @@
           "apps/fe-react-builder/src/favicon.ico",
           "apps/fe-react-builder/src/assets"
         ],
-        "styles": ["apps/fe-react-builder/src/styles.scss"],
+        "styles": ["apps/fe-react-builder/src/scss/style.scss"],
         "scripts": [],
         "isolatedConfig": true,
         "webpackConfig": "apps/fe-react-builder/webpack.config.js"
