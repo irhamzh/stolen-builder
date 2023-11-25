@@ -1,12 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
+import HelloComponent from './components/HelloComponent';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="fe-react-builder" />
+      <HelloComponent word="MAN " />
     </div>
   );
 }
