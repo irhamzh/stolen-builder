@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SkillTree from '../views/Builder/SkillTree';
 
 export function BuilderRoutes() {
