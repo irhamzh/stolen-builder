@@ -1,6 +1,6 @@
 const HelloComponent = (props: { word: string }) => {
   const { word } = props;
-  return <span> HELLO {word} </span>;
+  return <h4> HELLO {word} </h4>;
 };
 
 export default HelloComponent;

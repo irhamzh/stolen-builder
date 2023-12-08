@@ -6,6 +6,13 @@ let colors = {
   white1: '#F5F8FC',
   danger: '#D62929',
   purple: '#4C56E3',
+  brown: {
+    dark: '#2C2724',
+    light: "#766256",
+    lighter: "#946F10",
+    lightest: "#E3C0AC",
+    yellow: "#A57E29"
+  },
   primary: {
     main: '#185A9D',
     dark: '#102D4F',
@@ -21,14 +28,6 @@ let colors = {
     dark: '#054609',
     light: '#C9E8E7',
     lighter: '#C9E8E7',
-  },
-  oranges: {
-    primary: '#FF701F',
-    background: 'rgba(255, 112, 31, 0.08)',
-    light: '#FFFCDE',
-  },
-  success: {
-    main: '#25A2A1',
   },
 };
 
