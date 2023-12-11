@@ -5,17 +5,17 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+	document.getElementById('root') as HTMLElement
 );
 root.render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+	<StrictMode>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
 
-    {/* Add store */}
-    {/* <Provider store={}>
+		{/* Add store */}
+		{/* <Provider store={}>
       <App />
     </Provider> */}
-  </StrictMode>
+	</StrictMode>
 );
