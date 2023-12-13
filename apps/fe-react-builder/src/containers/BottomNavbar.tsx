@@ -5,9 +5,9 @@ import StolenRealmLogo from '../assets/stolen-realm-logo.png';
 
 const BottomNavbar = () => {
 	const tabs = [
-		{ name: 'Encyclopedia', href: '/encyclopedia' },
 		{ name: 'Home', href: '/' },
-		{ name: 'Calculator', href: '/calculator' }
+		{ name: 'Calculator', href: '/calculator' },
+		{ name: 'Encyclopedia', href: '/encyclopedia' }
 	];
 
 	const [selectedTab, setSelectedTab] = useState<string>(tabs[1].name);
@@ -17,7 +17,7 @@ const BottomNavbar = () => {
 		backgroundColor: colors.brown.yellow,
 		padding: '0px 10px 15px 10px',
 		bottom: 0,
-		width: '99%',
+		width: '100%',
 		zIndex: 100,
 		position: 'fixed',
 		display: 'flex',
@@ -28,18 +28,17 @@ const BottomNavbar = () => {
 	const copyrightStyle: React.CSSProperties = {
 		display: 'flex',
 		alignItems: 'center',
-		textAlign: 'end',
-		color: colors.white,
-		fontSize: '14px'
+		textAlign: 'start',
+		fontSize: '12px'
 	};
 
 	const tabStyle: React.CSSProperties = {
 		textDecoration: 'none',
 		color: colors.white,
 		fontWeight: 600,
-		fontSize: '18px',
+		fontSize: '20px',
 		height: '100%',
-		width: '100%'
+		marginLeft: 'px'
 	};
 
 	const linkTabStyle = (
@@ -48,10 +47,10 @@ const BottomNavbar = () => {
 	): React.CSSProperties => ({
 		cursor: 'pointer',
 		padding: '10px',
-		borderTop: selectedTab === tabName ? `10px solid #4A57FF` : 'none',
-		marginLeft: '10px',
+		borderTop:
+			selectedTab === tabName ? `10px solid ${colors.blue.primary}` : 'none',
 		backgroundColor: tabHover === index ? colors.brown.lighter : '',
-		height: '75%'
+		height: '100%'
 	});
 
 	return (
@@ -60,7 +59,19 @@ const BottomNavbar = () => {
 				...baseStyle
 			}}
 		>
-			<img src={StolenRealmLogo} width="90px" height="70px" alt="Stolen Logo" />
+			<div style={copyrightStyle} className="p-1">
+				<img
+					src={StolenRealmLogo}
+					width="110px"
+					height="80px"
+					alt="Stolen Logo"
+				/>
+				<span style={{ marginLeft: '10px', marginTop: '5px' }}>
+					This is a fan project. <br />
+					All rights belongs to Burst2Flame Studio
+				</span>
+			</div>
+
 			<div
 				style={{
 					display: 'flex',
@@ -81,13 +92,6 @@ const BottomNavbar = () => {
 						</div>
 					</Link>
 				))}
-			</div>
-
-			<div style={copyrightStyle}>
-				<span>
-					This is a fan project. <br />
-					All rights belongs to Burst2Flame Studio
-				</span>
 			</div>
 		</div>
 	);
