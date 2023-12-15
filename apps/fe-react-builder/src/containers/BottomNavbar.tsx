@@ -5,9 +5,9 @@ import StolenRealmLogo from '../assets/stolen-realm-logo.png';
 
 const BottomNavbar = () => {
 	const tabs = [
-		{ name: 'Home', href: '/' },
+		{ name: 'Encyclopedia', href: '/encyclopedia' },
 		{ name: 'Calculator', href: '/calculator' },
-		{ name: 'Encyclopedia', href: '/encyclopedia' }
+		{ name: 'Home', href: '/' },
 	];
 
 	const [selectedTab, setSelectedTab] = useState<string>(tabs[1].name);

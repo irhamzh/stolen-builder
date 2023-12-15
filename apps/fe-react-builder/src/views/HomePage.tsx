@@ -4,10 +4,11 @@ import CharacterSelection from '../components/CharacterSelection';
 import colors from '../components/colors';
 import { useState } from 'react';
 import CharacterRole from '../enums/character-role.enums';
+import CharacterCardInterface from '../interfaces/character-card.interface';
 
 const HomePage = () => {
   const [isSelected, setIsSelected] = useState(0);
-	const tempCharacterData = [
+	const tempCharacterData: CharacterCardInterface[] = [
 		{
 			name: 'Artemis',
 			role: CharacterRole.Rogue,
@@ -58,6 +59,9 @@ const HomePage = () => {
 				<h1>STOLEN BUILDER</h1>
 				<h5 style={{ color: colors.font.primary }}>
 					Stolen Realm build planner and calculator
+				</h5>
+				<h5 style={{ color: colors.font.primary }}>
+					TODO: Create Edit (Green), Delete (Red), Calc (Yellow) Button
 				</h5>
 			</Row>
 			<Row>
