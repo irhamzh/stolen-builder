@@ -16,7 +16,7 @@ const CharacterSelection: React.FC<Props> = ({ title, children, width }) => {
 				backgroundColor: '#211A19',
 				border: '5px solid #40302B',
 				position: 'relative',
-				width: width || '40vw'
+				width: width || '50vw'
 			}}
 		>
 			<Row className="justify-content-md-center">
@@ -32,7 +32,7 @@ const CharacterSelection: React.FC<Props> = ({ title, children, width }) => {
 			>
 				{children}
 				<Col className="my-2">
-					<CharacterCard isCreateNew />
+					<CharacterCard />
 				</Col>
 			</Row>
 		</Container>
