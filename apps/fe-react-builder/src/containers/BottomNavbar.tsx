@@ -28,17 +28,17 @@ const BottomNavbar = () => {
 	const copyrightStyle: React.CSSProperties = {
 		display: 'flex',
 		alignItems: 'center',
-		textAlign: 'start',
-		fontSize: '12px'
+		textAlign: 'end',
+		fontSize: '12px',
 	};
 
 	const tabStyle: React.CSSProperties = {
 		textDecoration: 'none',
 		color: colors.white,
 		fontWeight: 600,
-		fontSize: '20px',
+		fontSize: '18px',
 		height: '100%',
-		marginLeft: 'px'
+		marginLeft: '10px'
 	};
 
 	const linkTabStyle = (
@@ -59,39 +59,37 @@ const BottomNavbar = () => {
 				...baseStyle
 			}}
 		>
-			<div style={copyrightStyle} className="p-1">
-				<img
+      <div style={{display: 'flex'}}>
+        <img
 					src={StolenRealmLogo}
-					width="110px"
-					height="80px"
+					width="100px"
+					height="70px"
 					alt="Stolen Logo"
 				/>
-				<span style={{ marginLeft: '10px', marginTop: '5px' }}>
+        <div
+          className='d-flex justify-content-center align-center'
+          style={{marginLeft: '1vw'}}
+        >
+          {tabs.map((tab, index) => (
+            <Link to={tab.href} style={tabStyle}>
+              <div
+                key={tab.name}
+                style={linkTabStyle(tab.name, index)}
+                onClick={() => setSelectedTab(tab.name)}
+                onMouseEnter={() => setTabHover(index)}
+                onMouseLeave={() => setTabHover(undefined)}
+              >
+                {tab.name}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div style={copyrightStyle} className="p-1">
+				<span style={{ marginRight: '5x', marginTop: '5px' }}>
 					This is a fan project. <br />
 					All rights belongs to Burst2Flame Studio
 				</span>
-			</div>
-
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center'
-				}}
-			>
-				{tabs.map((tab, index) => (
-					<Link to={tab.href} style={tabStyle}>
-						<div
-							key={tab.name}
-							style={linkTabStyle(tab.name, index)}
-							onClick={() => setSelectedTab(tab.name)}
-							onMouseEnter={() => setTabHover(index)}
-							onMouseLeave={() => setTabHover(undefined)}
-						>
-							{tab.name}
-						</div>
-					</Link>
-				))}
 			</div>
 		</div>
 	);
