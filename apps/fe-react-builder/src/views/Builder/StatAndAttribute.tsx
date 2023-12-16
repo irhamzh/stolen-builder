@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-const StatAndAttribute = ()=> {
-    return (
-        <h4>StatAndAttribute</h4>
-=======
 import { Container } from "react-bootstrap"
 
 const StatAndAttribute = ()=> {
@@ -10,7 +5,6 @@ const StatAndAttribute = ()=> {
         <Container>
             <h4>StatAndAttribute</h4>
         </Container>  
->>>>>>> Stashed changes
     )
 }
 
