@@ -5,12 +5,8 @@ import StolenRealmLogo from '../assets/stolen-realm-logo.png';
 
 const BottomNavbar = () => {
 	const tabs = [
-<<<<<<< HEAD
-		{ name: 'Home', href: '/' },
 		{ name: 'Builder', href:'/builder'},
-=======
 		{ name: 'Encyclopedia', href: '/encyclopedia' },
->>>>>>> a0e713f69919d7f0fc4df5340cc803c2f0abf554
 		{ name: 'Calculator', href: '/calculator' },
 		{ name: 'Home', href: '/' },
 	];

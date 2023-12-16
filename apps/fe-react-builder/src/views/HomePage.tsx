@@ -51,8 +51,6 @@ const HomePage = () => {
 			health: 2227,
 			mana: 2030
 		}
-<<<<<<< HEAD
-=======
 		// {
 		// 	name: 'Bree',
 		// 	role: CharacterRole.Rogue,
@@ -60,7 +58,6 @@ const HomePage = () => {
 		// 	health: 2227,
 		// 	mana: 2030
 		// }
->>>>>>> a0e713f69919d7f0fc4df5340cc803c2f0abf554
 	];
 
 	return (
