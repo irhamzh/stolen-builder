@@ -1,7 +1,4 @@
 let colors = {
-	black: '#252525',
-	grey: '#858585',
-	lightGrey: '#CECECE',
 	white: '#FFFFFF',
 	white1: '#F5F8FC',
 	danger: '#D62929',
@@ -15,36 +12,18 @@ let colors = {
 	},
 	brown: {
 		dark: '#2C2724',
+		darker: '#191410',
 		light: '#766256',
 		lighter: '#946F10',
 		lightest: '#E3C0AC',
 		yellow: '#A57E29'
 	},
-	primary: {
-		main: '#185A9D',
-		dark: '#102D4F',
-		light: '#ADCEEA',
-		lighter: '#EAF2F9',
-		green: {
-			100: '#F3FCFC',
-			500: '#25A2A1'
-		}
-	},
-	secondary: {
-		main: '#43CEA2',
-		dark: '#054609',
-		light: '#C9E8E7',
-		lighter: '#C9E8E7'
-	}
 };
 
 colors = {
 	...colors,
-	primary: {
-		...colors.primary
-	},
-	secondary: {
-		...colors.secondary
+	font: {
+		...colors.font
 	}
 };
 

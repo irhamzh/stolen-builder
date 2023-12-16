@@ -2,40 +2,44 @@ import { Col, Container, Row } from 'react-bootstrap';
 import CharacterCard from '../components/CharacterCard';
 import CharacterSelection from '../components/CharacterSelection';
 import colors from '../components/colors';
+import { useState } from 'react';
+import CharacterRole from '../enums/character-role.enums';
+import CharacterCardInterface from '../interfaces/character-card.interface';
 
 const HomePage = () => {
-	const tempCharacterData = [
+  const [isSelected, setIsSelected] = useState(0);
+	const tempCharacterData: CharacterCardInterface[] = [
 		{
 			name: 'Artemis',
-			role: 'Assasin', //Create enum for role
+			role: CharacterRole.Rogue,
 			buildName: 'One Punch Man',
 			health: 2137,
 			mana: 2134
 		},
 		{
 			name: 'Blue',
-			role: 'Warrior',
+			role: CharacterRole.Fighter,
 			buildName: 'Wolverine',
 			health: 40095,
 			mana: 1632
 		},
 		{
 			name: 'Tom',
-			role: 'Healer',
+			role: CharacterRole.Paladin,
 			buildName: 'White Mage',
 			health: 5254,
 			mana: 2158
 		},
 		{
 			name: 'Reese',
-			role: 'Warlock',
+			role: CharacterRole.Warlock,
 			buildName: 'Immortal Summoner Exploder',
 			health: 20053,
 			mana: 2380
 		},
 		{
 			name: 'Inheritor',
-			role: 'Archer',
+			role: CharacterRole.Ranger,
 			buildName: 'Failed Archer',
 			health: 1816,
 			mana: 1792
@@ -47,6 +51,16 @@ const HomePage = () => {
 			health: 2227,
 			mana: 2030
 		}
+<<<<<<< HEAD
+=======
+		// {
+		// 	name: 'Bree',
+		// 	role: CharacterRole.Rogue,
+		// 	buildName: 'The Forgotten One',
+		// 	health: 2227,
+		// 	mana: 2030
+		// }
+>>>>>>> a0e713f69919d7f0fc4df5340cc803c2f0abf554
 	];
 
 	return (
@@ -56,12 +70,15 @@ const HomePage = () => {
 				<h5 style={{ color: colors.font.primary }}>
 					Stolen Realm build planner and calculator
 				</h5>
+				<h5 style={{ color: colors.font.primary }}>
+					TODO: Create Edit (Green), Delete (Red), Calc (Yellow) Button
+				</h5>
 			</Row>
 			<Row>
 				<CharacterSelection title="Available Characters">
-					{tempCharacterData?.map((character) => (
+					{tempCharacterData?.map((character, index) => (
 						<Col className="my-2">
-							<CharacterCard characterData={character} />
+							<CharacterCard characterData={character} onClick={() => setIsSelected(index)} isCurrent={index === isSelected} />
 						</Col>
 					))}
 				</CharacterSelection>
