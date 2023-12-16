@@ -10,7 +10,7 @@ const BottomNavbar = () => {
 		{ name: 'Home', href: '/' },
 	];
 
-	const [selectedTab, setSelectedTab] = useState<string>(tabs[1].name);
+	const [selectedTab, setSelectedTab] = useState<string>(tabs[2].name);
 	const [tabHover, setTabHover] = useState<any>();
 
 	const baseStyle: React.CSSProperties = {
