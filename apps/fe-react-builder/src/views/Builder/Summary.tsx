@@ -1,6 +1,11 @@
+import { Container } from "react-bootstrap"
+
 const Summary = ()=> {
     return (
-        <h4>This is summary</h4>
+        <Container>
+            <h4>This is summary</h4>
+        </Container>
+
     )
 }
 

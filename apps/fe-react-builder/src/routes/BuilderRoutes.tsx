@@ -1,24 +1,22 @@
 import { Routes, Route, useSearchParams } from 'react-router-dom';
 import SkillTree from '../views/Builder/SkillTree';
+import SidebarNav from '../components/SideBarNav';
+import { Col,Row,Container } from 'react-bootstrap';
 import Fortune from '../views/Builder/Fortune';
 import ItemPage from '../views/Builder/ItemPage';
 import StatAndAttribute from '../views/Builder/StatAndAttribute';
-import SidebarNav from '../components/SideBarNav';
 import Summary from '../views/Builder/Summary';
-import { Container } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 export function BuilderRoutes() {
 
 	return (
 		<>
-		<Container>
+		<Container style={{ marginLeft:"1rem"}}>
 			<Row>
-				<Col className='col-3'>
+				<Col className='col-3 px-0' style={{paddingTop: "10%", paddingBottom:"10%"}}>
 					<SidebarNav/>
 				</Col>
-				<Col>
+				<Col style={{paddingTop:"90px"}}>
 					<Routes>
 						<Route index element={<SkillTree />} />
 						<Route path="fortune" element={<Fortune/>} />
