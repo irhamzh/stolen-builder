@@ -39,14 +39,14 @@ const HomePage = () => {
 			buildName: 'Failed Archer',
 			health: 1816,
 			mana: 1792
+		},
+		{
+			name: 'Bree',
+			role: 'Assasin',
+			buildName: 'The Forgotten One',
+			health: 2227,
+			mana: 2030
 		}
-		// {
-		// 	name: 'Bree',
-		// 	role: 'Assasin',
-		// 	buildName: 'The Forgotten One',
-		// 	health: 2227,
-		// 	mana: 2030
-		// }
 	];
 
 	return (
