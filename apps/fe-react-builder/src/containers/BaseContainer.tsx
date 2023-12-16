@@ -7,7 +7,7 @@ import BottomNavbar from './BottomNavbar';
 const BaseContainer = () => {
 	return (
 		<div>
-			<div style={{ margin: '1%', paddingBottom: '10%' }}>
+			<div style={{ margin: '1%', paddingBottom: '5%' }}>
 				<Outlet context={{ character: 'empty' }} />
 			</div>
 			<BottomNavbar />
