@@ -2,16 +2,24 @@ import React, { useState } from 'react';
 import colors from '../components/colors';
 import { Link } from 'react-router-dom';
 import StolenRealmLogo from '../assets/stolen-realm-logo.png';
+import { capitalize } from '../utils/formatter';
 
-const BottomNavbar = () => {
+interface Props {
+	currentPath: string;
+}
+
+const BottomNavbar: React.FC<Props> = ({ currentPath }) => {
+	const currentNav = currentPath.split('/')?.[1] || 'home';
 	const tabs = [
-		{ name: 'Builder', href:'/builder'},
 		{ name: 'Encyclopedia', href: '/encyclopedia' },
 		{ name: 'Calculator', href: '/calculator' },
-		{ name: 'Home', href: '/' },
+		// { name: 'Builder', href: '/builder' },
+		{ name: 'Home', href: '/' }
 	];
 
-	const [selectedTab, setSelectedTab] = useState<string>(tabs[2].name);
+	const [selectedTab, setSelectedTab] = useState<string>(
+		capitalize(currentNav)
+	);
 	const [tabHover, setTabHover] = useState<any>();
 
 	const baseStyle: React.CSSProperties = {
@@ -30,14 +38,14 @@ const BottomNavbar = () => {
 		display: 'flex',
 		alignItems: 'center',
 		textAlign: 'end',
-		fontSize: '12px',
+		fontSize: '14px'
 	};
 
 	const tabStyle: React.CSSProperties = {
 		textDecoration: 'none',
 		color: colors.white,
 		fontWeight: 600,
-		fontSize: '18px',
+		fontSize: '20px',
 		height: '100%',
 		marginLeft: '10px'
 	};
@@ -60,33 +68,33 @@ const BottomNavbar = () => {
 				...baseStyle
 			}}
 		>
-      <div style={{display: 'flex'}}>
-        <img
+			<div style={{ display: 'flex' }}>
+				<img
 					src={StolenRealmLogo}
-					width="100px"
-					height="70px"
+					width="90px"
+					height="65px"
 					alt="Stolen Logo"
 				/>
-        <div
-          className='d-flex justify-content-center align-center'
-          style={{marginLeft: '1vw'}}
-        >
-          {tabs.map((tab, index) => (
-            <Link to={tab.href} style={tabStyle}>
-              <div
-                key={tab.name}
-                style={linkTabStyle(tab.name, index)}
-                onClick={() => setSelectedTab(tab.name)}
-                onMouseEnter={() => setTabHover(index)}
-                onMouseLeave={() => setTabHover(undefined)}
-              >
-                {tab.name}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div style={copyrightStyle} className="p-1">
+				<div
+					className="d-flex justify-content-center align-center"
+					style={{ marginLeft: '1vw' }}
+				>
+					{tabs.map((tab, index) => (
+						<Link to={tab.href} style={tabStyle}>
+							<div
+								key={tab.name}
+								style={linkTabStyle(tab.name, index)}
+								onClick={() => setSelectedTab(tab.name)}
+								onMouseEnter={() => setTabHover(index)}
+								onMouseLeave={() => setTabHover(undefined)}
+							>
+								{tab.name}
+							</div>
+						</Link>
+					))}
+				</div>
+			</div>
+			<div style={copyrightStyle} className="p-1">
 				<span style={{ marginRight: '5x', marginTop: '5px' }}>
 					This is a fan project. <br />
 					All rights belongs to Burst2Flame Studio
