@@ -5,11 +5,12 @@ import colors from '../components/colors';
 import { useState } from 'react';
 import CharacterRole from '../enums/character-role.enums';
 import CharacterCardInterface from '../interfaces/character-card.interface';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-  const [isSelected, setIsSelected] = useState(0);
 	const tempCharacterData: CharacterCardInterface[] = [
 		{
+			id: 1,
 			name: 'Artemis',
 			role: CharacterRole.Rogue,
 			buildName: 'One Punch Man',
@@ -17,6 +18,7 @@ const HomePage = () => {
 			mana: 2134
 		},
 		{
+			id: 2,
 			name: 'Blue',
 			role: CharacterRole.Fighter,
 			buildName: 'Wolverine',
@@ -24,6 +26,7 @@ const HomePage = () => {
 			mana: 1632
 		},
 		{
+			id: 3,
 			name: 'Tom',
 			role: CharacterRole.Paladin,
 			buildName: 'White Mage',
@@ -31,27 +34,23 @@ const HomePage = () => {
 			mana: 2158
 		},
 		{
+			id: 4,
 			name: 'Reese',
 			role: CharacterRole.Warlock,
 			buildName: 'Immortal Summoner Exploder',
 			health: 20053,
 			mana: 2380
-		},
-		{
-			name: 'Inheritor',
-			role: CharacterRole.Ranger,
-			buildName: 'Failed Archer',
-			health: 1816,
-			mana: 1792
-		},
-		{
-			name: 'Bree',
-			role: 'Assasin',
-			buildName: 'The Forgotten One',
-			health: 2227,
-			mana: 2030
 		}
 		// {
+		// id: 5,
+		// 	name: 'Inheritor',
+		// 	role: CharacterRole.Ranger,
+		// 	buildName: 'Failed Archer',
+		// 	health: 1816,
+		// 	mana: 1792
+		// }
+		// {
+		// id: 6,
 		// 	name: 'Bree',
 		// 	role: CharacterRole.Rogue,
 		// 	buildName: 'The Forgotten One',
@@ -59,6 +58,20 @@ const HomePage = () => {
 		// 	mana: 2030
 		// }
 	];
+	const navigate = useNavigate();
+	const [isSelected, setIsSelected] = useState(0);
+
+	function onCreateNewCharacter() {
+		navigate('/builder');
+	}
+
+	function onAcceptCharacter() {
+		console.log('accepting');
+	}
+
+	function onRemoveCharacter() {
+		console.log('removing');
+	}
 
 	return (
 		<Container className="justify-content-md-center">
@@ -72,10 +85,19 @@ const HomePage = () => {
 				</h5>
 			</Row>
 			<Row>
-				<CharacterSelection title="Available Characters">
+				<CharacterSelection
+					title="Available Characters"
+					onAccept={onAcceptCharacter}
+					onRemove={onRemoveCharacter}
+					onCreateNew={onCreateNewCharacter}
+				>
 					{tempCharacterData?.map((character, index) => (
-						<Col className="my-2">
-							<CharacterCard characterData={character} onClick={() => setIsSelected(index)} isCurrent={index === isSelected} />
+						<Col className="my-2 justify-content-md-center d-flex">
+							<CharacterCard
+								characterData={character}
+								onClick={() => setIsSelected(index)}
+								isCurrent={index === isSelected}
+							/>
 						</Col>
 					))}
 				</CharacterSelection>
