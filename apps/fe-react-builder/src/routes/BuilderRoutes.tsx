@@ -1,26 +1,28 @@
 import { Routes, Route, useSearchParams } from 'react-router-dom';
 import SkillTree from '../views/Builder/SkillTree';
+import SidebarNav from '../components/SideBarNav';
+import { Col,Row,Container } from 'react-bootstrap';
 import Fortune from '../views/Builder/Fortune';
 import ItemPage from '../views/Builder/ItemPage';
 import StatAndAttribute from '../views/Builder/StatAndAttribute';
-import SidebarNav from '../components/SideBarNav';
 import Summary from '../views/Builder/Summary';
-import { Container } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { useState } from 'react';
 
 export function BuilderRoutes() {
 
+	const [charSelected,setCharSelected ] = useState(true) // pass in the prop to the sidebar if a char is selected or not
+
 	return (
-		<>
-		<Container>
+		<Container style={{ marginLeft:"1rem"}}>
 			<Row>
-				<Col className='col-3'>
-					<SidebarNav/>
+				<Col className='col-2 px-0' style={{paddingTop: "8%", paddingBottom:"10%"}}>
+					<SidebarNav
+					isCharSelected= {charSelected}
+					/>
 				</Col>
-				<Col>
+				<Col style={{paddingTop:"90px"}}>
 					<Routes>
-						<Route index element={<SkillTree />} />
+						<Route index element={charSelected?<SkillTree />:<h4>Please Select a character first before navigating to builder</h4>} />
 						<Route path="fortune" element={<Fortune/>} />
 						<Route path="item" element={<ItemPage/>} />
 						<Route path="stat-attr" element={<StatAndAttribute/>} />
@@ -33,8 +35,6 @@ export function BuilderRoutes() {
 				</Col>
 			</Row>
 		</Container>
-
-		</>
 	);
 }
 

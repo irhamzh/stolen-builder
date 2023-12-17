@@ -1,6 +1,10 @@
+import { Container } from "react-bootstrap"
+
 const StatAndAttribute = ()=> {
     return (
-        <h4>StatAndAttribute</h4>
+        <Container>
+            <h4>StatAndAttribute</h4>
+        </Container>  
     )
 }
 

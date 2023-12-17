@@ -1,12 +1,14 @@
-import React, { useState,useRef } from "react"
-import { Container, Nav } from "react-bootstrap"
-import { Link, useLocation, useSearchParams } from "react-router-dom"
+import { Nav } from "react-bootstrap"
+import { Link, useLocation} from "react-router-dom"
 
+type SidebarProp = {
+    isCharSelected : boolean
+}
 
-const SidebarNav = ()=> {
+const SidebarNav: React.FC<SidebarProp> = ({isCharSelected})=> {
 
-    const [searchParams,setSearchParams] = useSearchParams({currentPath:"/builder"});
-    const location = useLocation()
+    const location = useLocation();
+
     const tabs = [
         {name: "Skill Tree", href:"/builder"},
         {name: "Fortune", href:"/builder/fortune"},
@@ -15,30 +17,33 @@ const SidebarNav = ()=> {
         {name: "Summary", href:"/builder/summary"}
     ]
 
-    const selectedTab= useRef(searchParams.get("currentPath")); // we set the default using the params then :/
     const baseStyle :React.CSSProperties = {
-        color: "#766256",
+        color: "#DBC1A2",
         fontWeight: "700",
-        fontSize:"35px"
+        fontSize:"25px",
     }
 
     const tabStyle: React.CSSProperties = {
         ...baseStyle,
-        backgroundColor: "transparent   ",
+       
     };
 
     const selectedTabStyle: React.CSSProperties = {
         ...baseStyle,
-        border: "10px solid" 
+        borderRadius: "0px 2rem 2rem 0px",
+        padding:"5px",
+        backgroundImage: "linear-gradient(#2c2724, #2c2724), linear-gradient(to right, transparent, #DBC1A2)",
+        backgroundOrigin: "border-box",
+        backgroundClip: "content-box, border-box",
+        textAlign:"center",
     }
 
     return (
-        <Nav className="flex-column my-[130px]">
-            <p>{location.pathname}</p>
+        <Nav className="flex-column">
             {tabs.map((tab,index)=> {
                 return (
-                    <Nav.Item className="mt-4"> 
-                        <Nav.Link key={index} as= {Link} to={tab.href} onClick={(e:any)=> {setSearchParams({currentPath:tab.href}); console.log(location.pathname)}} style={selectedTab.current == tab.name?selectedTabStyle:tabStyle}> {tab.name} </Nav.Link>
+                    <Nav.Item className="mt-2"> 
+                        <Nav.Link disabled={!isCharSelected} key={index} as= {Link} to={tab.href} style={location.pathname == tab.href?selectedTabStyle:tabStyle}> {tab.name} </Nav.Link>
                     </Nav.Item>
                     
                 )
