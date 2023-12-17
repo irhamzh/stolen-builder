@@ -1,7 +1,7 @@
 // Here you can add other styles
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 body {
 	font-family: Crimson Pro, sans-serif;
@@ -16,7 +16,6 @@ h5,
 h6 {
 	font-family: Crimson Pro, sans-serif;
 	font-weight: 500;
-	color: white;
 }
 
 h3 {
@@ -33,12 +32,23 @@ h4 {
 	color: white;
 }
 
-.spinner-border {
-	width: 1em;
-	height: 1em;
+.btn {
+	color: white;
+	border-radius: 0px;
+	padding: 2rem;
 }
 
-.c-sidebar {
-	background-color: theme-color(primary);
+.btn-success {
+	background-color: #324634;
+	border-color: #dbc1a2;
+	color: #dbc1a2;
+}
+.btn-danger {
+	background-color: #6c0000;
+	border-color: #6c0000;
 }
 
+.btn-warning {
+	background-color: #946f10;
+	border-color: #946f10;
+}

@@ -1,7 +1,6 @@
 let colors = {
 	white: '#FFFFFF',
 	white1: '#F5F8FC',
-	danger: '#D62929',
 	purple: '#4C56E3',
 	font: {
 		primary: '#DBC1A2',
@@ -10,6 +9,12 @@ let colors = {
 	blue: {
 		primary: '#4A57FF'
 	},
+	red: {
+		danger: '#6C0000'
+	},
+	green: {
+		primary: '#324634'
+	},
 	brown: {
 		dark: '#2C2724',
 		darker: '#191410',
@@ -17,7 +22,7 @@ let colors = {
 		lighter: '#946F10',
 		lightest: '#E3C0AC',
 		yellow: '#A57E29'
-	},
+	}
 };
 
 colors = {
