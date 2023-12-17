@@ -1,11 +1,13 @@
-import React, { useState,useRef, useEffect } from "react"
-import { Container, Nav } from "react-bootstrap"
-import { Link, useLocation, useSearchParams } from "react-router-dom"
+import { Nav } from "react-bootstrap"
+import { Link, useLocation} from "react-router-dom"
 
+type SidebarProp = {
+    isCharSelected : boolean
+}
 
-const SidebarNav = ()=> {
+const SidebarNav: React.FC<SidebarProp> = ({isCharSelected})=> {
 
-    const location = useLocation()
+    const location = useLocation();
 
     const tabs = [
         {name: "Skill Tree", href:"/builder"},
@@ -23,6 +25,7 @@ const SidebarNav = ()=> {
 
     const tabStyle: React.CSSProperties = {
         ...baseStyle,
+       
     };
 
     const selectedTabStyle: React.CSSProperties = {
@@ -32,7 +35,7 @@ const SidebarNav = ()=> {
         backgroundImage: "linear-gradient(#2c2724, #2c2724), linear-gradient(to right, transparent, #DBC1A2)",
         backgroundOrigin: "border-box",
         backgroundClip: "content-box, border-box",
-        textAlign:"center"    
+        textAlign:"center",
     }
 
     return (
@@ -40,7 +43,7 @@ const SidebarNav = ()=> {
             {tabs.map((tab,index)=> {
                 return (
                     <Nav.Item className="mt-2"> 
-                        <Nav.Link key={index} as= {Link} to={tab.href} style={location.pathname == tab.href?selectedTabStyle:tabStyle}> {tab.name} </Nav.Link>
+                        <Nav.Link disabled={!isCharSelected} key={index} as= {Link} to={tab.href} style={location.pathname == tab.href?selectedTabStyle:tabStyle}> {tab.name} </Nav.Link>
                     </Nav.Item>
                     
                 )
