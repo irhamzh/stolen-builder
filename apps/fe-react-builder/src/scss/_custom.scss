@@ -15,7 +15,6 @@ h5,
 h6 {
 	font-family: Crimson Pro, sans-serif;
 	font-weight: 500;
-	color: white;
 }
 
 h3 {
@@ -32,13 +31,24 @@ h4 {
 	color: white;
 }
 
-.spinner-border {
-	width: 1em;
-	height: 1em;
+.btn {
+	color: white;
+	border-radius: 0px;
+	padding: 2rem;
 }
 
-.c-sidebar {
-	background-color: theme-color(primary);
+.btn-success {
+	background-color: #324634;
+	border-color: #dbc1a2;
+	color: #dbc1a2;
+}
+.btn-danger {
+	background-color: #6c0000;
+	border-color: #6c0000;
 }
 
+.btn-warning {
+	background-color: #946f10;
+	border-color: #946f10;
+}
 
