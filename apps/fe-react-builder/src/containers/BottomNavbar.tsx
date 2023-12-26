@@ -13,7 +13,7 @@ const BottomNavbar: React.FC<Props> = ({ currentPath }) => {
 	const tabs = [
 		{ name: 'Encyclopedia', href: '/encyclopedia' },
 		{ name: 'Calculator', href: '/calculator' },
-		// { name: 'Builder', href: '/builder' },
+		{ name: 'Builder', href: '/builder' },
 		{ name: 'Home', href: '/' }
 	];
 

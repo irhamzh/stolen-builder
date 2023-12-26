@@ -30,7 +30,7 @@ const SidebarNav: React.FC<SidebarProp> = ({isCharSelected})=> {
 
     const selectedTabStyle: React.CSSProperties = {
         ...baseStyle,
-        borderRadius: "0px 2rem 2rem 0px",
+        borderRadius: "0px 1rem 1rem 0px",
         padding:"5px",
         backgroundImage: "linear-gradient(#2c2724, #2c2724), linear-gradient(to right, transparent, #DBC1A2)",
         backgroundOrigin: "border-box",
