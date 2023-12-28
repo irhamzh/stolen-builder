@@ -13,7 +13,7 @@ export function BuilderRoutes() {
 	const [charSelected,setCharSelected ] = useState(true) // pass in the prop to the sidebar if a char is selected or not
 
 	return (
-		<Container style={{ marginLeft:"1rem"}}>
+		<Container fluid >
 			<Row>
 				<Col className='col-2 px-0' style={{paddingTop: "8%", paddingBottom:"10%"}}>
 					<SidebarNav
