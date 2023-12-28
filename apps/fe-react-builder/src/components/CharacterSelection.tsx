@@ -32,7 +32,7 @@ const CharacterSelection: React.FC<Props> = ({
 				backgroundColor: '#211A19',
 				border: '5px solid #40302B',
 				position: 'relative',
-				width: width || '45vw'
+				width: width || '50vw'
 			}}
 		>
 			<Row className="justify-content-md-center">
