@@ -1,6 +1,6 @@
 # StolenBuilder
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="apps\fe-react-builder\src\assets\logo.png" width="45"></a>
+<div><a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="apps\fe-react-builder\src\assets\logo.png" width="100"></a></div>
 Character builder and calculator for the game: Stolen Realm
 
 ## Start the app
