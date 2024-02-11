@@ -13,6 +13,20 @@ If you happen to use Nx plugins, you can leverage code generators that might com
 
 Run `nx list` to get a list of available plugins and whether they have generators. Then run `nx list <plugin-name>` to see what generators are available.
 
+## Updating Dependencies
+
+Step 1:
+
+```
+npx nx migrate latest
+```
+
+Step 2:
+
+```
+npx nx migrate --run-migrations
+```
+
 ## Running tasks
 
 To execute tasks with Nx use the following syntax:
