@@ -11,7 +11,7 @@ import { ItemService } from './item.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { UpdateItemDto } from './dto/update-item.dto';
 
-@Controller('item')
+@Controller({ version: '1', path: 'item' })
 export class ItemController {
 	constructor(private readonly itemService: ItemService) {}
 

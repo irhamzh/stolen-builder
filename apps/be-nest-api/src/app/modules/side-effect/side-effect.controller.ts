@@ -11,7 +11,7 @@ import { SideEffectService } from './side-effect.service';
 import { CreateSideEffectDto } from './dto/create-side-effect.dto';
 import { UpdateSideEffectDto } from './dto/update-side-effect.dto';
 
-@Controller('side-effect')
+@Controller({ version: '1', path: 'side-effect' })
 export class SideEffectController {
 	constructor(private readonly sideEffectService: SideEffectService) {}
 

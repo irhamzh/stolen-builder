@@ -11,7 +11,7 @@ import { SkillTreeService } from './skill-tree.service';
 import { CreateSkillTreeDto } from './dto/create-skill-tree.dto';
 import { UpdateSkillTreeDto } from './dto/update-skill-tree.dto';
 
-@Controller('skill-tree')
+@Controller({ version: '1', path: 'skill-tree' })
 export class SkillTreeController {
 	constructor(private readonly skillTreeService: SkillTreeService) {}
 

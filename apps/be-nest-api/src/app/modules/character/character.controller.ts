@@ -11,7 +11,7 @@ import { CharacterService } from './character.service';
 import { CreateCharacterDto } from './dto/create-character.dto';
 import { UpdateCharacterDto } from './dto/update-character.dto';
 
-@Controller('character')
+@Controller({ version: '1', path: 'character' })
 export class CharacterController {
 	constructor(private readonly characterService: CharacterService) {}
 

@@ -11,7 +11,7 @@ import { FortuneService } from './fortune.service';
 import { CreateFortuneDto } from './dto/create-fortune.dto';
 import { UpdateFortuneDto } from './dto/update-fortune.dto';
 
-@Controller('fortune')
+@Controller({ version: '1', path: 'fortune' })
 export class FortuneController {
 	constructor(private readonly fortuneService: FortuneService) {}
 
